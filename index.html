@@ -16,7 +16,7 @@
 
   <body>
 
-    <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+    <nav id="header" class="navbar navbar-fixed-top navbar-dark bg-inverse headroom">
       <a class="navbar-brand" href="#">Project name</a>
       <ul class="nav navbar-nav">
         <li class="nav-item active">
@@ -27,40 +27,82 @@
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div id="hero">
-      <video autoplay="" loop="" poster="http://zippy.gfycat.com/WillingIndelibleDunlin.gif" id="bgvid">
-        <source id="webmsource" src="http://zippy.gfycat.com/EnormousPettyImago.webm" type="video/webm">
-        <source id="mp4source" src="http://zippy.gfycat.com/EnormousPettyImago.mp4" type="video/mp4">
+      <video autoplay="" loop="" poster="videos/hero.gif" id="bgvid">
+        <source id="webmsource" src="videos/hero.webm" type="video/webm">
+        <source id="mp4source" src="videos/hero.mp4" type="video/mp4">
       </video>
       <div class="container">
-        <h1 class="display-3">Hello, world!</h1>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+          <div class="col-sm-12 logo">
+            <h1>Altamind</h1>
+          </div>
+          <a href="#hero-division">
+            <svg class="arrows">
+                <path class="a1" d="M0 0 L30 32 L60 0"></path>
+                <path class="a2" d="M0 20 L30 52 L60 20"></path>
+                <path class="a3" d="M0 40 L30 72 L60 40"></path>
+            </svg>
+          </a>
+          <div id="hero-division" class="col-sm-12 division">
+            <!--<img src="images/hero-division.png">-->
+          </div> 
       </div>
     </div>
 
     <div id="first">
+      <video autoplay="" loop="" poster="videos/hero.gif" id="bgvid">
+        <source id="webmsource" src="videos/hero.webm" type="video/webm">
+        <source id="mp4source" src="videos/hero.mp4" type="video/mp4">
+      </video>
       <div class="container">
         <!-- Example row of columns -->
         <div class="row">
-          <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+          <div class="col-md-8 offset-md-2">
+            <div class="text">
+              <p>We are</p>
+              <p>
+                <span class="word wisteria">creative</span>
+                <span class="word belize">code</span>
+                <span class="word pomegranate">design</span>
+                <span class="word green">content</span>
+                <span class="word midnight">altamind</span>
+              </p>
+            </div>
           </div>
-          <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-         </div>
-          <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+          <div class="col-md-8 offset-md-2 sub-text">
+            <p>Bring your idea<br> We'll execute it to perfection.</p>
           </div>
         </div>
       </div>
     </div>
+<!--
+    <div data-anchor="subview-work" class="section subview subview__work"><div class="work__container">
+  <div class="work__wrap">
+    <div class="work__slider--background shape--resize" style="width: 1344px;"></div>
+    <!-- DESKTOP --
+    <div class="work__container--inner" style="margin-top: -363px;">
 
+      <div class="work__container--slider"></div>
+    </div>
+    <!-- / DESKTOP --
+    <!-- MOBILE --
+    <div class="mobile--only mobile-work__container--inner shape--resize" style="width: 1344px;">
+      <ul>
+        <li class="mobile-work__item">
+        </li>
+        <li class="mobile-work__item">
+        </li>
+        <li class="mobile-work__item">
+        </li>
+      </ul>
+    </div>
+    <!-- / MOBILE --
+  </div>
+</div>
+<div class="shape__dark shape--resize" style="width: 1344px;">
+  <!-- <button class="button__see-case-studies" ng-click="changeView('cases/bmw')">See our case studies</button> --
+  
+</div></div>
+!-->
     <div id="second">
       <div class="container">
         <!-- Example row of columns -->
@@ -112,6 +154,8 @@
     </div> <!-- /container -->
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script src="js/headroom.js"></script>
+    <script src="js/jQuery.headroom.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>
