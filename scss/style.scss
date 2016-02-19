@@ -67,14 +67,15 @@ body {
 }
 
 #first {			
-	background: rgba(255,255,255,1);
-	background: -moz-linear-gradient(top, rgba(255,255,255,1) 79%, rgba(255,255,255,0.5) 100%);
-	background: -webkit-gradient(left top, left bottom, color-stop(79%, rgba(255,255,255,1)), color-stop(100%, rgba(255,255,255,0.5)));
-	background: -webkit-linear-gradient(top, rgba(255,255,255,1) 79%, rgba(255,255,255,0.5) 100%);
-	background: -o-linear-gradient(top, rgba(255,255,255,1) 79%, rgba(255,255,255,0.5) 100%);
-	background: -ms-linear-gradient(top, rgba(255,255,255,1) 79%, rgba(255,255,255,0.5) 100%);
-	background: linear-gradient(to bottom, rgba(255,255,255,1) 79%, rgba(255,255,255,0.5) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=0 );
+
+background: rgba(255,255,255,1);
+background: -moz-linear-gradient(top, rgba(255,255,255,1) 70%, rgba(0,0,0,0.6) 75%, rgba(0,0,0,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(70%, rgba(255,255,255,1)), color-stop(75%, rgba(0,0,0,0.6)), color-stop(100%, rgba(0,0,0,1)));
+background: -webkit-linear-gradient(top, rgba(255,255,255,1) 70%, rgba(0,0,0,0.6) 75%, rgba(0,0,0,1) 100%);
+background: -o-linear-gradient(top, rgba(255,255,255,1) 70%, rgba(0,0,0,0.6) 75%, rgba(0,0,0,1) 100%);
+background: -ms-linear-gradient(top, rgba(255,255,255,1) 70%, rgba(0,0,0,0.6) 75%, rgba(0,0,0,1) 100%);
+background: linear-gradient(to bottom, rgba(255,255,255,1) 70%, rgba(0,0,0,0.6) 75%, rgba(0,0,0,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000', GradientType=0 );
 }
 #second {
 	background: #000;
@@ -102,6 +103,10 @@ body {
 	    color: #fff;
 	    width: 100%;
 	    text-shadow: rgba(0, 159, 227, 0.0980392) 27.8px -10.625px, rgba(0, 159, 227, 0.2) 17.375px -7.08333px, rgba(0, 159, 227, 0.298039) -6.07143px 11.5833px;
+		-webkit-transition: text-shadow 0.05s ease;
+		-moz-transition: text-shadow 0.05s ease;
+		-o-transition: text-shadow 0.05s ease;
+		transition: text-shadow 0.05s ease;
 	}
 
 	video#bgvid {
@@ -109,7 +114,7 @@ body {
 	    right: 0;
 	    top: 0;
 	    min-width: 100vw;
-	    min-height: 120vh;
+	    min-height: 130vh;
 	    //width: auto;
 	    z-index: -100;
 	    transform: translateZ(0);
@@ -194,8 +199,8 @@ body {
 	    padding-bottom: 30%;
 	    vertical-align: middle;
 	    padding-top: 25vh;
-	    height: 120vh;
-	    min-height: 120vh;
+	    height: 130vh;
+	    min-height: 130vh;
 	    max-width: 100vw;
 
 	    @include mq(xs) {
@@ -208,16 +213,16 @@ body {
 	    position: absolute;
 	    bottom: 0;
 	    left: 0;
-	    height: 20vh;
+	    height: 30vh;
         width: 100vw;
-		background: rgba(255,255,255,0.8);
-		background: -moz-linear-gradient(top, rgba(255,255,255,0.8) 0%, rgba(255,255,255,1) 85%);
-		background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,0.8)), color-stop(85%, rgba(255,255,255,1)));
-		background: -webkit-linear-gradient(top, rgba(255,255,255,0.8) 0%, rgba(255,255,255,1) 85%);
-		background: -o-linear-gradient(top, rgba(255,255,255,0.8) 0%, rgba(255,255,255,1) 85%);
-		background: -ms-linear-gradient(top, rgba(255,255,255,0.8) 0%, rgba(255,255,255,1) 85%);
-		background: linear-gradient(to bottom, rgba(255,255,255,0.8) 0%, rgba(255,255,255,1) 85%);
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=0 );
+		background: rgba(255,255,255,0.1);
+background: -moz-linear-gradient(-45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,1) 53%);
+background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(255,255,255,0.1)), color-stop(53%, rgba(255,255,255,1)));
+background: -webkit-linear-gradient(-45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,1) 53%);
+background: -o-linear-gradient(-45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,1) 53%);
+background: -ms-linear-gradient(-45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,1) 53%);
+background: linear-gradient(175deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,1) 53%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=1 );
 	}
 
 	.arrows {
@@ -226,7 +231,7 @@ body {
 	position: absolute;
 	left: 50%;
 	margin-left: -30px;
-	bottom: 30vh;
+	bottom: 40vh;
 	}
 
 	.arrows path {
@@ -271,10 +276,12 @@ body {
 
 #first {
 
+	overflow: hidden;
+
 	video#bgvid {
 	    position: absolute;
 	    right: 0;
-	    top: 120vh;
+	    top: 130vh;
 	    min-width: 100vw;
 	    min-height: 80vh;
 	    //width: auto;
@@ -287,9 +294,10 @@ body {
 	    }
 	}
 
+
+
 	.container {
-		min-height: 80vh;
-		padding-top: 9vh;
+		min-height: 40vh;
 	}
 
 	.text {
@@ -298,7 +306,7 @@ body {
 		  display: inline-block;
 		    vertical-align: top;
 		    margin: 0;
-		    font-size: 7em;
+		    font-size: 8vw;
 		    margin-right: 0.25em;
 		}
 
@@ -356,101 +364,179 @@ body {
 	}
 }
 
-//
 
-@media only screen and (max-width: 1600px) and (min-width: 1281px) {
-	.subview__work {
-	    min-height: 570px;
-	    height: 570px;
+.se-container{
+	display: block;
+	width: 100%;
+	overflow: hidden;
+	padding-top: 150px;
+}
+.se-slope{
+	margin: 0 -50px;
+	-webkit-transform-origin: left center;
+	-moz-transform-origin: left center;
+	-o-transform-origin: left center;
+	-ms-transform-origin: left center;
+	transform-origin: left center;
+}
+
+.se-slope{
+	background: #e90089;
+	-webkit-transform: rotate(-5deg);
+	-moz-transform: rotate(-5deg);
+	-o-transform: rotate(-5deg);
+	-ms-transform: rotate(-5deg);
+	transform: rotate(-5deg);
+	box-shadow: 0px 2px 3px rgba(0,0,0,0.4) inset;
+}
+
+.se-content{
+	margin: 0 auto;
+	height: 200px;
+}
+
+.se-content h3{
+	font-size: 60px;
+	position: relative;
+	display: inline-block;
+	padding: 10px 30px 8px 30px;
+	height: 80px;
+	background: #000;
+	line-height: 80px;
+	margin-bottom: 20px;
+	font-family: 'Bitter', 'Trebuchet MS', Arial;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.9);
+}
+.se-content h3:before{
+	content: '';
+	width: 0;
+	height: 0;
+	border-top: 38px solid transparent;
+	border-bottom: 60px solid transparent;
+	border-right: 60px solid black;
+	position: absolute;
+	left: -59px;
+	top: 0px;
+}
+.se-content h3:after{
+	content: '';
+	width: 0;
+	height: 0;
+	border-top: 38px solid transparent;
+	border-bottom: 60px solid transparent;
+	border-left: 60px solid black;
+	position: absolute;
+	right: -59px;
+	top: 0px;
+}
+.se-content p{
+	width: 75%;
+	max-width: 500px;
+	margin: 0 auto;
+	font-style: italic;
+	font-size: 18px;
+	line-height: 24px;
+	padding-top: 10px;
+}
+.se-content p:first-letter{
+	font-size: 40px;
+	font-family: 'Adobe Garamond Pro', Garamond, Palatino, 'Palatino Linotype', Times, 'Times New Roman', Georgia, serif;
+}
+
+.se-slope:nth-child .se-content{
+	-webkit-transform: rotate(5deg);
+	-moz-transform: rotate(5deg);
+	-o-transform: rotate(5deg);
+	-ms-transform: rotate(5deg);
+	transform: rotate(5deg);
+	color: #000;
+	padding: 150px 100px 250px 100px;
+}
+.se-slope:nth-child .se-content h3{
+	background: #000;
+	color: #e90089;
+}
+
+/* Media Queries */
+@media screen and (max-width: 1010px){
+	.se-content h3{
+		font-size: 40px;
+	}
+}
+@media screen and (max-width: 767px) {
+	.se-content h3{
+		font-size: 20px;
+	}
+}
+@media screen and (max-width: 400px) {
+	.se-content h3{
+		font-size: 20px;
+		line-height: 20px;
+		padding-top: 30px;
+		height: 60px;
+	}
+	.se-content p{
+		width: 95%;
+	}
+	.se-slope:nth-child .se-content{
+		padding-left:60px;
+		padding-right:60px;
+		
+	}
+}
+
+#second {
+	/*
+	 * Animation module with all animation code
+	 */
+	.anim-text-flow,
+	.anim-text-flow-hover:hover {
+	  /*
+	   * Animation variables
+	   */
+	  $animationSteps: 20;
+	  $animationDuration: 50;
+	  $animationElement: span;
+	  $animationElementsCount: 100;
+	  $delayBetweenLetters: 0.2;
+
+	  /*
+	   * Elements settings
+	   */
+	  #{$animationElement} {
+	    animation-name: anim-text-flow-keys;
+	    animation-duration: #{$animationDuration}s;
+	    animation-iteration-count: infinite;
+	    animation-direction: alternate;
+	    animation-fill-mode: forwards;
+	  }
+
+	  /*
+	   * Keyframe loop
+	   */
+	  @keyframes anim-text-flow-keys {
+	    @for $i from 0 through $animationSteps {
+	      #{percentage($i * (1 / $animationSteps))} {
+	        color: hsla(random(365), 60, 60, 1);
+	      }
+	    }
+	  }
+
+	  /*
+	   * Element animation delay loop
+	   */
+	  $totalDelayTime: $animationElementsCount * $delayBetweenLetters;
+
+	  @for $i from 1 through $animationElementsCount {
+	    #{$animationElement}:nth-of-type(#{$i}) {
+	      animation-delay: #{($i * $delayBetweenLetters) - $totalDelayTime}s;
+	    }
+	  }
 	}
 
-	.subview__work .work__container .work__slider--background {
-	    height: 630px;
+	.txt {
+		display: block;
+		text-align: center;
+		font-size: 9vw;	
 	}
-
-	.subview__work .work__container--inner {
-	    height: 810px;
-	    margin-top: -405px;
-	}
-
-	.subview__work .work__container--slider {
-	    margin: 0 auto;
-	}
-}
-
-.subview {
-    position: relative;
-    z-index: 2;
-    -webkit-transform: translate3d(0,0,0);
-}
-
-.subview__work .work__container--inner {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    height: 1005px;
-    margin: -502px 0 0 0;
-}
-
-.subview__work .work__container--slider {
-    width: 100%;
-    height: 100%;
-}
-
-.subview__work .work__slider--background {
-    position: absolute;
-    top: 250px;
-    left: 0;
-    width: 0;
-    height: 830px;
-    background: #fcfcfc;
-    -webkit-transform: skew(-21deg) rotate(-21deg);
-    -moz-transform: skew(-21deg) rotate(-21deg);
-    -ms-transform: skew(-21deg) rotate(-21deg);
-    -o-transform: skew(-21deg) rotate(-21deg);
-    transform: skew(-21deg) rotate(-21deg);
-    -webkit-transform-origin: 0 50%;
-    -moz-transform-origin: 0 50%;
-    -ms-transform-origin: 0 50%;
-    -o-transform-origin: 0 50%;
-    transform-origin: 0 50%;
-}
-
-.subview {
-    position: relative;
-    z-index: 2;
-    -webkit-transform: translate3d(0,0,0);
-}
-
-.subview__work .work__container {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-}
-
-.subview__work .work__wrap {
-    width: 100%;
-    height: 100%;
-}
-.subview__work .shape__dark {
-    position: absolute;
-    top: 50px;
-    left: 0;
-    width: 0;
-    height: 300px;
-    background: #1a1b23;
-    -webkit-transform: skew(-21deg) rotate(-21deg);
-    -moz-transform: skew(-21deg) rotate(-21deg);
-    -ms-transform: skew(-21deg) rotate(-21deg);
-    -o-transform: skew(-21deg) rotate(-21deg);
-    transform: skew(-21deg) rotate(-21deg);
-    -webkit-transform-origin: 0 50%;
-    -moz-transform-origin: 0 50%;
-    -ms-transform-origin: 0 50%;
-    -o-transform-origin: 0 50%;
-    transform-origin: 0 50%;
-    z-index: 10;
 }

@@ -91,3 +91,10 @@ function splitLetters(word) {
 
 changeWord();
 setInterval(changeWord, 4000);
+
+// PORTFOLIO TEXT BY HENDRY SADRAK http://codepen.io/hendrysadrak //
+$('#second .txt').html(function(i, html) {
+  var chars = $.trim(html).split("");
+
+  return '<span>' + chars.join('</span><span>') + '</span>';
+});
