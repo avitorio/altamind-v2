@@ -90,7 +90,7 @@ function splitLetters(word) {
 }
 
 changeWord();
-setInterval(changeWord, 4000);
+setInterval(changeWord, 2500);
 
 // PORTFOLIO TEXT BY HENDRY SADRAK http://codepen.io/hendrysadrak //
 $('#second .txt').html(function(i, html) {
@@ -98,3 +98,33 @@ $('#second .txt').html(function(i, html) {
 
   return '<span>' + chars.join('</span><span>') + '</span>';
 });
+
+// Penfolio code
+	/* ====================================================================
+	
+	Mini menu
+
+	=======================================================================  */
+
+	function isScrolledIntoView(elem){
+	    var $elem = $(elem);
+	    var $window = $(window);
+
+	    var docViewTop = $window.scrollTop();
+	    var docViewBottom = docViewTop + $window.height();
+
+	    var elemTop = $elem.offset().top + 400;
+	    var elemBottom = elemTop + $elem.height() - 600;
+	    	console.log(elemTop);
+	    if((elemBottom <= docViewBottom) && (elemTop >= docViewTop)){
+	    	$elem.addClass('bring_in');
+	    } else {
+	    	$elem.removeClass('bring_in');
+	    }
+	}
+
+	$(window).scroll(function(){
+		$('.pen_card').each(function(){
+			isScrolledIntoView($(this));
+		})
+	})

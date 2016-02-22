@@ -42,7 +42,8 @@ body {
 	overflow: auto;
 	-webkit-overflow-scrolling: touch;
 	position:relative;
-}*/
+}
+*/
 
 // Navbar
 .bg-inverse {
@@ -202,6 +203,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	    height: 130vh;
 	    min-height: 130vh;
 	    max-width: 100vw;
+        background: rgba(49,112,143,0.3);
 
 	    @include mq(xs) {
 	    	background: url(http://zippy.gfycat.com/WillingIndelibleDunlin.gif) no-repeat center center;
@@ -486,6 +488,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 }
 
 #second {
+
+	.container {
+		min-height: 45vh; 
+	}
 	/*
 	 * Animation module with all animation code
 	 */
@@ -539,4 +545,411 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 		text-align: center;
 		font-size: 9vw;	
 	}
+
+  .penfolio {
+    &_inner {
+      &__about {
+        overflow: auto;
+        position: relative;
+        .about_left {
+          float: left;
+          height: 100%;
+          width: 50%;
+          position: absolute;
+          color: white;
+          padding: 80px;
+          background: orange;
+          h2 {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 50%;
+            font-weight: 100;
+            font-size: 40px;
+            transform: translateY(-50%);
+            margin: auto;
+            text-align: center;
+          }
+        }
+        .about_right {
+          float: right;
+          width: 50%;
+          padding: 80px;
+          font-family: 'Lora';
+          color: #6B6D75;
+          font-weight: 100;
+          line-height: 26px;
+          font-size: 14px;
+          background: #fff;
+          a {
+            text-decoration: none;
+            transition: all .3s;
+          }
+        }
+      }
+    }
+  }
 }
+
+
+// Fonts
+
+// Feel free to add your own
+@import url(https://fonts.googleapis.com/css?family=Nunito:400,300,700);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(https://fonts.googleapis.com/css?family=Lora:400,400italic,700italic,700);
+
+// Variables
+
+// Fonts
+$primary-font: "nunito";
+$secondary-font: "montserrat";
+
+// Colors
+$bg: #121318;
+$text-on-color: lighten($bg, 20);
+
+// One color to rule them all. Change this to change the entire scheme
+$primary: #EF8E27;
+
+// Styles
+
+.wrap {
+  margin: 0 auto;
+}
+
+img {
+  vertical-align: middle;
+}
+
+%button {
+  background: none;
+  color: $primary;
+  border: 2px solid $primary;
+  padding: 12px 14px;
+  font-size: 12px;
+  font-family: $secondary-font;
+  transition: all .3s;
+  cursor: pointer;
+  &:hover {
+    color: white !important;
+    background: $primary;
+    a {
+      color: white;
+    }
+  }
+}
+
+.penfolio {
+	background: #fff;
+  &_inner {
+    .wrap {}
+    &__pens {
+      overflow: auto;
+      .penfolio_header {
+        background: $bg;
+        position: Relative;
+        overflow: hidden;
+        color: white;
+        padding: 60px 20px;
+        text-align: center;
+        h2 {
+          font-family: 'Lora';
+          font-weight: 100;
+          font-size: 40px;
+          text-align: center;
+          margin: 0;
+        }
+        h3 {
+          margin: 0;
+          font-size: 14px;
+          font-family: 'Lora';
+          font-weight: 100;
+          font-style: italic;
+          opacity: 0.4;
+        }
+      }
+      .pen_card {
+        float: left;
+        position: relative;
+        width: 100%;
+        &:hover {
+          .pen_overlay {
+            opacity: 1;
+          }
+          .pen_details__inner {}
+          img {
+            transform: scale(1.07);
+            transform-origin: 50%;
+          }
+        }
+        .pen_overlay {
+          position: absolute;
+          width: 100%;
+          opacity: 1;
+          transition: all .3s;
+          opacity: 0;
+          height: 100%;
+          background: rgba(32, 37, 43, 0.84);
+          right: 0;
+          z-index: 1;
+          a {
+            text-decoration: none;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+            text-align: center;
+            width: 130px;
+            top: 50%;
+            font-size: 12px;
+            padding: 13px 20px;
+            color: #fff;
+            transition: all .2s;
+            text-decoration: none;
+            border: 2px solid #fff;
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+            &:hover {
+              color: $bg;
+              background: white;
+            }
+          }
+        }
+        &:nth-of-type(even) {
+          background: #F7F7F7;
+        }
+        &:nth-of-type(even) .pen_card__inner {
+          float: left;
+          background: #F7F7F7;
+          &:after {
+            display: none;
+            content: '';
+            width: 100px;
+            top: -50px;
+            right: -60px;
+            height: 150%;
+            background: #F7F7F7;
+            left: auto;
+            position: absolute;
+            transform: rotate(-4deg);
+          }
+        }
+        &:nth-of-type(even) .pen_details {
+          float: right;
+          right: 0;
+        }
+        &__inner {
+          background: white;
+          overflow: hidden;
+          float: right;
+          width: 50%;
+          position: relative;
+          &:hover {
+            .pen_details {
+              display: block;
+            }
+          }
+          a {
+            text-decoration: none;
+          }
+          &:after {
+            display: none;
+            content: '';
+            width: 100px;
+            top: -50px;
+            left: -60px;
+            height: 150%;
+            background: #fff;
+            position: absolute;
+            transform: rotate(4deg);
+          }
+        }
+        img {
+          width: 100%;
+          transform: scale(1);
+          transition: all 2s;
+        }
+      }
+      .pen_details {
+        padding: 20px;
+        width: 50%;
+        position: absolute;
+        // box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.18) inset;
+        height: 100%;
+        background: #fff;
+        &__inner {
+          position: absolute;
+          top: 50%;
+          width: 330px;
+          left: 0;
+          transition: all .3s;
+          right: 0;
+          margin: auto;
+          -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+          a {
+            background: 0 0;
+            color: $primary;
+            padding: 11px 34px;
+            font-size: 12px;
+            font-family: lora;
+            transition: all .3s;
+            cursor: pointer;
+            margin-left: 0px;
+            text-decoration: none;
+          }
+          p {
+            a {
+              padding: 0px;
+              border: none;
+            }
+          }
+        }
+        h2 {
+          margin: 0;
+          font-family: 'lora';
+          font-style: italic;
+          font-size: 26px;
+          font-weight: 100;
+          color: #4F5675;
+        }
+        p {
+          font-family: Lora;
+          color: #6B6D75;
+          padding-left: 20px;
+          margin-left: 10px;
+          font-weight: 100;
+          line-height: 26px;
+          font-style: italic;
+          font-size: 14px;
+          margin-bottom: 0px;
+        }
+      }
+    }
+  }
+}
+
+
+
+.pen_card {
+  .pen_details__inner {
+    opacity: 0;
+    left: -80px !important;
+  }
+}
+
+.pen_card {
+  .pen_card__inner {
+    opacity: 0 !important;
+    transition: all .3s;
+  }
+}
+
+.pen_card.bring_in {
+  .pen_card__inner {
+    opacity: 1 !important;
+    transition: all .3s;
+  }
+}
+
+.pen_card.bring_in {
+  .pen_details__inner {
+    opacity: 1;
+    left: 0px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .about_left, .about_right {
+    width: 100% !important;
+    position: relative !important;
+    float: none !important;
+    height: auto !important;
+  }
+  .pen_nav__mini {
+    display: none !important;
+  }
+  body .penfolio_inner__footer ul {
+    float: left;
+    margin: 31px 0;
+    position: Relative;
+    top: 3px;
+    margin: 30px 0px;
+    padding: 0;
+    float: none;
+    text-align: center;
+  }
+  body .penfolio_inner__home .pen_intro h5 {
+    width: 100%;
+    padding: 20px;
+  }
+  .about_right {
+    text-align: Center  !important;
+    padding: 24px  !important;
+  }
+  body .penfolio_inner__about .about_left h2 {
+    font-size: 32px;
+  }
+  .pen_logo, .pen_cta {
+    width: 100% !important;
+    text-align: center;
+  }
+  .penfolio_inner__home .pen_cta, nav {
+    display: none;
+  }
+  .pen_responsive_nav {
+    display: block !important;
+  }
+  .pen_cta {
+    margin-top: 20px;
+  }
+  .pen_intro {
+    margin: 0px 0px 54px 0px !important;
+  }
+  .pen_card__inner, .pen_details {
+    width: 100% !important;
+    position: Relative !important;
+  }
+  .pen_details {
+    clear: both;
+    height: auto !important;
+  }
+  body .penfolio_inner__pens .pen_details__inner {
+    position: relative;
+    transform: none;
+    width: 100%;
+    text-align: center;
+  }
+  body .penfolio_inner__pens .pen_card {
+    float: left;
+    position: relative;
+    width: 100%;
+    padding: 20px;
+  }
+  body .penfolio_inner__pens .pen_details p {
+    padding-left: 0px;
+    margin-left: 0px;
+  }
+  body .penfolio_inner__pens .penfolio_header {
+    margin-top: 20px;
+  }
+  body .penfolio_inner__pens .pen_details__inner a {
+    margin-left: 0px;
+  }
+}
+
+@keyframes dot {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: 88px;
+  }
+  100% {
+    left: 0;
+  }
+}
+
