@@ -109,13 +109,18 @@
             <span class="txt anim-text-flow">OUR WORK</span>
           </div>
           <div class="col-md-8 offset-md-2">
-            <p>Web  Design  Mobile  Logos  Banners  Videos</p>
+            <ul class="portfolio-sorting list-inline text-center">
+              <li><a href="#" data-group="all" class="active">All</a></li>
+              <li><a href="#" data-group="people">People</a></li>
+              <li><a href="#" data-group="simpsons">Simpsons</a></li>
+              <li><a href="#" data-group="futurama">Futurama</a></li>
+            </ul>
           </div>
         </div>
       </div>
       <div class="penfolio_inner__pens" scroll_target="penfolio">
-        <div class="wrap">
-          <div class="pen_card">
+        <ul class="wrap">
+          <li class="pen_card" data-groups='["people"]'>
             <div class="pen_card__inner">
               <div class="pen_overlay">
                 <a target="_blank" href="http://codepen.io/jcoulterdesign/pen/azepmX">View project</a>
@@ -128,8 +133,8 @@
                 <p>Just trying to do some login animations. Buggy on Firefox, fine in Chrome. Still need to tidy up and Optimize...<a target="_blank" href="http://codepen.io/jcoulterdesign/pen/azepmX"> Read more</a></p>
               </div>
             </div>
-          </div>
-          <div class="pen_card">
+          </li>
+          <li class="pen_card" data-groups='["futurama"]'>
             <div class="pen_card__inner">
               <div class="pen_overlay">
                 <a target="_blank" href="http://codepen.io/jcoulterdesign/pen/jExQGd">View project</a>
@@ -142,8 +147,8 @@
                 <p>Another UI piece in CSS. Hover over the stat box for a nice scale etc. This does need tidying up slightly and i will make it responsive at some point so it looks top banana...<a target="_blank" href="http://codepen.io/jcoulterdesign/pen/jExQGd"> Read more</a></p>
               </div>
             </div>
-          </div>
-          <div class="pen_card">
+          </li>
+          <li class="pen_card" data-groups='["people"]'>
             <div class="pen_card__inner">
               <div class="pen_overlay">
                 <a target="_blank" href="http://codepen.io/jcoulterdesign/pen/qdWxEm">View project</a>
@@ -155,8 +160,8 @@
                 <h2>Swanky Pure CSS Drop Down Menu V2.0</h2><p>Pure CSS Drop down menu. Nice little addition to any non-javascript user interface. Uses the labels for trick to toggle animations....<a target="_blank" href="http://codepen.io/jcoulterdesign/pen/qdWxEm"> Read more</a></p>
               </div>
             </div>
-          </div>
-            <div class="pen_card">
+          </li>
+            <li class="pen_card" data-groups='["futurama"]'>
               <div class="pen_card__inner">
                 <div class="pen_overlay">
                   <a target="_blank" href="http://codepen.io/jcoulterdesign/pen/GgGrQO">View project</a>
@@ -169,8 +174,8 @@
                   <p>Erm. Yeah i don't really know how i go to this. I was really just messing around with some more animations, :targets etc and this was born! Looks like it would be quit...<a target="_blank" href="http://codepen.io/jcoulterdesign/pen/GgGrQO"> Read more</a></p>
                 </div>
               </div>
-            </div>
-            <div class="pen_card">
+            </li>
+            <li class="pen_card">
               <div class="pen_card__inner">
                 <div class="pen_overlay">
                   <a target="_blank" href="http://codepen.io/jcoulterdesign/pen/azQMqG">View project</a>
@@ -183,8 +188,8 @@
                     <p>Just another experiment for a favourite button this time. Some nice animations etc. All in CSS, no imagery or svg's etc...<a target="_blank" href="http://codepen.io/jcoulterdesign/pen/azQMqG"> Read more</a></p>
                   </div>
                 </div>
-            </div>
-              <div class="pen_card">
+           </li>
+              <li class="pen_card">
                 <div class="pen_card__inner">
                   <div class="pen_overlay">
                     <a target="_blank" href="http://codepen.io/jcoulterdesign/pen/jWWroX">View project</a>
@@ -197,8 +202,11 @@
                     <p>I've been playing around with the Ionic Framework and Angular for a while now. Building simple apps and whatnot. One thing i thought it lacked (Although absolutely ama...<a target="_blank" href="http://codepen.io/jcoulterdesign/pen/jWWroX"> Read more</a></p>
                   </div>
                 </div>
-                </div>
-              </div>
+              </li>
+
+              <!-- sizer -->
+              <li class="pen_card shuffle_sizer"></li>
+          </ul>
       </div>
     </div>
 
@@ -232,6 +240,7 @@
     <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
     <script src="js/headroom.js"></script>
     <script src="js/jQuery.headroom.js"></script>
+    <script src="js/jquery.shuffle.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>
