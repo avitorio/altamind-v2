@@ -67,22 +67,6 @@ body {
 	min-height: 100vh;
 }
 
-#first {			
-
-background: rgba(255,255,255,1);
-background: -moz-linear-gradient(top, rgba(255,255,255,1) 70%, rgba(0,0,0,0.6) 75%, rgba(0,0,0,1) 100%);
-background: -webkit-gradient(left top, left bottom, color-stop(70%, rgba(255,255,255,1)), color-stop(75%, rgba(0,0,0,0.6)), color-stop(100%, rgba(0,0,0,1)));
-background: -webkit-linear-gradient(top, rgba(255,255,255,1) 70%, rgba(0,0,0,0.6) 75%, rgba(0,0,0,1) 100%);
-background: -o-linear-gradient(top, rgba(255,255,255,1) 70%, rgba(0,0,0,0.6) 75%, rgba(0,0,0,1) 100%);
-background: -ms-linear-gradient(top, rgba(255,255,255,1) 70%, rgba(0,0,0,0.6) 75%, rgba(0,0,0,1) 100%);
-background: linear-gradient(to bottom, rgba(255,255,255,1) 70%, rgba(0,0,0,0.6) 75%, rgba(0,0,0,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000', GradientType=0 );
-}
-#second {
-	background: #000;
-	color: #fff
-}
-
 // Hero Section
 
 @mixin background-size($size) {
@@ -278,25 +262,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
 #first {
 
+
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+73,ffffff+74,ffffff+100&1+73,0.9+74,1+100 */
+	background: -moz-linear-gradient(top,  rgba(255,255,255,1) 73%, rgba(255,255,255,0.9) 74%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 73%,rgba(255,255,255,0.9) 74%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  rgba(255,255,255,1) 73%,rgba(255,255,255,0.9) 74%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 	overflow: hidden;
-
-	video#bgvid {
-	    position: absolute;
-	    right: 0;
-	    top: 130vh;
-	    min-width: 100vw;
-	    min-height: 80vh;
-	    //width: auto;
-	    z-index: -100;
-	    //height: auto;
-	    @include background-size(cover);
-
-	    @include mq(xs) {
-	    	display: none;
-	    }
-	}
-
-
 
 	.container {
 		min-height: 40vh;
@@ -488,6 +460,28 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 }
 
 #second {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+40&1+0,0.9+40 */
+	background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(255,255,255,0.9) 40%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.9) 40%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.9) 40%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e6ffffff',GradientType=0 ); /* IE6-9 */
+
+
+	video#bgvid {
+	    position: absolute;
+	    right: 0;
+	    top: 200vh;
+	    min-width: 100vw;
+	    min-height: 100vh;
+	    //width: auto;
+	    z-index: -100;
+	    //height: auto;
+	    @include background-size(cover);
+
+	    @include mq(xs) {
+	    	display: none;
+	    }
+	}
 
 	.container {
 		min-height: 45vh; 
@@ -969,6 +963,7 @@ img {
     text-transform: uppercase;
     font-size: 16px;
     margin-bottom: 48px;
+    text-align: center;
 }
 
 .list-inline {
