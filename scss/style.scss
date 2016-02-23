@@ -383,13 +383,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 }
 
 .se-slope{
-	background: #e90089;
+	background: #31708F;
 	-webkit-transform: rotate(-5deg);
 	-moz-transform: rotate(-5deg);
 	-o-transform: rotate(-5deg);
 	-ms-transform: rotate(-5deg);
 	transform: rotate(-5deg);
-	box-shadow: 0px 2px 3px rgba(0,0,0,0.4) inset;
+	//box-shadow: 0px 2px 3px rgba(0,0,0,0.4) inset;
 }
 
 .se-content{
@@ -544,6 +544,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 		display: block;
 		text-align: center;
 		font-size: 9vw;	
+		margin-top: 40px;
 	}
 
   .penfolio {
