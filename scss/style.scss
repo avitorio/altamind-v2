@@ -232,6 +232,12 @@ nav {
 		bottom: 40vh;
 	}
 
+	@include media-breakpoint-down(xs) {
+		.arrows {
+			bottom: 50vh;
+		}
+	}
+
 	p {
 	    text-align: center;
 	    color: #fff;
@@ -297,6 +303,39 @@ nav {
 	                 0 8px 5px hsl(179,71%,60%); }
 	}
 
+	@include media-breakpoint-down(xs) {
+		h1{
+	    	text-shadow: 0 1px 0 hsl(174,5%,80%),
+		                 0 2px 0 hsl(174,5%,75%),
+		                 0 3px 0 hsl(174,5%,70%),
+		                 0 4px 0 hsl(174,5%,66%),;
+             animation: glow-mobile 10s ease-in-out infinite;
+		}
+
+		@keyframes glow-mobile {
+		  0%,100%{ text-shadow:0 1px 0 hsl(174,5%,80%),
+		                 0 2px 0 hsl(174,5%,75%),
+		                 0 3px 0 hsl(174,5%,70%),
+		                 0 4px 0 hsl(174,5%,66%),
+		                 0 5px 0 hsl(174,5%,64%),; }
+		  25%{ text-shadow: 0 1px 0 hsl(179,71%,80%),
+		                 0 2px 5px hsl(179,71%,75%),
+		                 0 3px 5px hsl(179,71%,70%),
+		                 0 4px 5px hsl(179,71%,66%),
+		                 0 5px 5px hsl(179,71%,64%); }
+		  50%{ text-shadow:0 1px 0 hsl(174,5%,80%),
+		                 0 2px 0 hsl(174,5%,75%),
+		                 0 3px 0 hsl(174,5%,70%),
+		                 0 4px 0 hsl(174,5%,66%),
+		                 0 5px 0 hsl(174,5%,64%); }
+		  75%{ text-shadow: 0 1px 0 hsl(179,71%,80%),
+		                 0 2px 5px hsl(179,71%,75%),
+		                 0 3px 5px hsl(179,71%,70%),
+		                 0 4px 5px hsl(179,71%,66%),
+		                 0 5px 5px hsl(179,71%,64%); }
+		}
+	}
+
 	video#bgvid {
 	    position: absolute;
 	    right: 0;
@@ -331,15 +370,21 @@ nav {
 
 	.container {
 		position: relative;
-	    padding-top: 30%;
-	    padding-bottom: 30%;
-	    vertical-align: middle;
-	    padding-top: 25vh;
+	    padding-bottom: 30vh;
 	    height: 130vh;
 	    min-height: 130vh;
 	    max-width: 100vw;
         background: rgba(49,112,143,0.3);
+        display: flex;
+	    align-items: center;
 	}
+
+	@include media-breakpoint-down(xs) {
+		.container {
+			padding-bottom: 45vh;
+		}
+	}
+
 
 	.division {
 	    position: absolute;
