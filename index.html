@@ -16,9 +16,10 @@
     <![endif]-->
 
     <title>Altamind Ventures</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/style.css?ver=0.1" rel="stylesheet">
+    <link href="dist/style.css?ver=0.1" rel="stylesheet">
 
     <!-- Robotmonster --
     <script id="robotmonster-script" src="https://robotmonster.io/robotmonster.js?56f68bfa24b3032f33cf41a6"></script> -->
@@ -332,23 +333,26 @@
     </div>
   </div>
 
-    <nav id="header" class="navbar navbar-fixed-top headroom slideUp">
+    <nav id="header" class="navbar navbar-fixed-top headroom animated headroom--top slideDown">
+      <a class="navbar-brand hidden-sm-up" href="#">Altamind</a>
+      <button class="hidden-sm-up pull-xs-right cmn-toggle-switch cmn-toggle-switch__htx" type="button" id="trigger-overlay">
+        <span>toggle menu</span> 
+      </button>
       <div class="container">
-        <a class="navbar-brand" href="#hero">Altamind</a>
-        <ul class="nav navbar-nav pull-xs-right">
-          <li class="nav-item active">
-            <a class="nav-link" href="#hero-division">About<span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#second">Our Work</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#testimonials">Testimonails</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-          </li>
-        </ul>
+        <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
+          <a class="navbar-brand" href="#">Altamind</a>
+          <ul class="nav navbar-nav pull-xs-right">
+            <li class="nav-item active">
+              <a class="nav-link" href="#about">About <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#work">Work</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
 
@@ -361,28 +365,43 @@
         <div class="stars"></div>
         <div class="stars"></div>
       </div>
-      <video autoplay="" loop="" poster="" id="bgvid" muted></video>
-      <!--
+      <!--<video autoplay="" loop="" poster="" id="bgvid" muted></video>-->
+      
       <video autoplay="" loop="" poster="https://zippy.gfycat.com/PerfumedCharmingAustraliankestrel.gif" id="bgvid" muted>
         <source id="webmsource" src="videos/hero.webm" type="video/webm">
         <source id="mp4source" src="videos/star-field.mp4" type="video/mp4">
-      </video>-->
+      </video>
       <div class="container">
-          <div class="col-sm-12 logo">
+          <div class="col-xs-12 logo">
             <!--<p>We make you</p>-->
+            <div class="text">
+              <p>We make your idea</p>
+                <h1 class="hero-word">Cool</h1>
+                <h1 class="hero-word">Reality</h1>
+                <h1 class="hero-word">Impress</h1>
+                <h1 class="hero-word">Work</h1>
+                <h1 class="hero-word">Pretty</h1>
+                <h1 class="hero-word">Sell</h1>
+                <h1 class="hero-word">Awesome</h1>
+                <h1 class="hero-word">Convert</h1>
+                <h1 class="hero-word">Grow</h1>
+                <h1 class="hero-word">Better</h1>
+
+            </div>
+            <!--
             <p>Our job is to make your brand</p>
-            <h1>Altamind</h1>
+            <h1>Altamind</h1>-->
           </div>
-          <a href="#hero-division">
+          <a href="#about">
             <svg class="arrows">
                 <path class="a1" d="M0 0 L30 32 L60 0"></path>
                 <path class="a2" d="M0 20 L30 52 L60 20"></path>
                 <path class="a3" d="M0 40 L30 72 L60 40"></path>
             </svg>
           </a>
-          <div id="hero-division" class="col-sm-12 division">
-            <!--<img src="images/hero-division.png">-->
-          </div> 
+          <div class="col-sm-12 division">
+            <p id="about">division</p>
+          </div>
       </div>
     </div>
 
@@ -390,9 +409,9 @@
       <div class="container">
         <!-- Example row of columns -->
         <div class="row">
-          <div class="col-xl-10 offset-xl-1 col-lg-12">
+          <div class="rotating col-xl-10 offset-xl-1 col-lg-12 col-sm-12 col-xs-12">
             <div class="text">
-              <p>We are <span class="invisible">Altamind</span></p>
+              <p class="we-are">We are <span class="invisible">marketing</span></p>
               <p>
                 <span class="word wisteria">creative</span>
                 <span class="word belize">code</span>
@@ -416,8 +435,9 @@
             </div>
           </div>
           <div class="col-xs-12 sub-text">
-            <p>Not an agency, your genius friends.</p>
-            <!--<p>Bring your idea<br> We'll execute it to perfection.</p>-->
+            <p>The team your business needs.</p>
+            <!--Not an agency, your genius friends.</p>
+            <p>Bring your idea<br> We'll execute it to perfection.</p>-->
             <!--<p>Whatever it is you are selling<br> We can make it more attractive to customers</p>
             <p>If you think hiring an expert is expensive<br> Wait until you hire an amateur</p>
             <p>You can call us your team</p>
@@ -435,7 +455,7 @@
       <section class="se-container">
         <div class="se-slope">
           <article id="slope" class="se-content">
-          <a href="#second">
+          <a href="#work">
             <svg class="arrows">
                 <path class="a1" d="M0 0 L30 32 L60 0"></path>
                 <path class="a2" d="M0 20 L30 52 L60 20"></path>
@@ -448,7 +468,7 @@
     </div>
     </div>
     
-    <div id="second">
+    <div id="work">
       <span id="coding"></span><span id="design"></span><span id="marketing"></span><span id="videos"></span>
       <video autoplay="" loop="" poster="" id="bgvid" muted></video>
       <!--
@@ -464,7 +484,7 @@
           </div>
           <div class="col-xs-12">
             <ul class="portfolio-sorting list-inline">
-              <li><a href="#" data-group="initial" class="active">All</a></li>
+              <li><a href="#" id="initial" data-group="initial" class="active">All</a></li>
               <li><a href="#" data-group="coding">Coding</a></li>
               <li><a href="#" data-group="design">Design</a></li>
               <li><a href="#" data-group="marketing">Marketing</a></li>
@@ -474,7 +494,7 @@
         </div>
         <div class="penfolio_inner__pens" scroll_target="penfolio">
         <ul class="wrap">
-          <li class="pen_card" data-groups='["initial", "design","videos"]'>
+          <li class="pen_card bring_in" data-groups='["initial", "coding", "design","videos"]'>
             <div class="pen_card__inner">
               <div class="pen_overlay">
                 <a target="_blank" href="http://vusher.com/">View project</a>
@@ -484,11 +504,11 @@
               <div class="pen_details">
               <div class="pen_details__inner">
                 <h2>Vusher</h2>
-                <p>Location based social network for iOS and Android.<a target="_blank" href="http://www.vusher.com"> Read more</a></p>
+                <p>Location based social network for iOS and Android.</p>
               </div>
             </div>
           </li>
-          <li class="pen_card" data-groups='["initial", "coding","videos"]'>
+          <li class="pen_card bring_in" data-groups='["initial", "coding","videos"]'>
             <div class="pen_card__inner">
               <div class="pen_overlay">
                 <a target="_blank" href="http://www.bxclinic.co.uk">View project</a>
@@ -498,11 +518,11 @@
             <div class="pen_details">
               <div class="pen_details__inner">
                 <h2>BxClinic</h2>
-                <p>Website for the top Biomechanics clinic in the UK. Creation of the whole site from start to finish.</p>
+                <p>Website for the top Biomechanics clinic in the UK.<span class="desktop"> Design, coding and video editing from start to finish.</span></p>
               </div>
             </div>
           </li>
-          <li class="pen_card" data-groups='["initial", "coding","videos"]'>
+          <li class="pen_card bring_in" data-groups='["initial", "coding","videos"]'>
             <div class="pen_card__inner">
               <div class="pen_overlay">
                 <a target="_blank" href="http://www.andrevitorio.com/">View project</a>
@@ -511,11 +531,11 @@
             </div>
             <div class="pen_details">
               <div class="pen_details__inner">
-                <h2>AndreVitorio.com</h2><p>The work and history of Andre Vitorio, the founder of Altamind</p>
+                <h2>AndreVitorio.com</h2><p>The work of Andre Vitorio, founder of Altamind.</p>
               </div>
             </div>
           </li>
-          <li class="pen_card" data-groups='["initial", "videos"]'>
+          <li class="pen_card bring_in" data-groups='["initial", "videos"]'>
             <div class="pen_card__inner">
               <div class="pen_overlay">
                 <a target="_blank" href="https://player.vimeo.com/video/83583972">View project</a>
@@ -524,40 +544,12 @@
             </div>
             <div class="pen_details">
               <div class="pen_details__inner">
-                <h2>Cupom Explainer Video</h2>
-                <p>Video created for Cupom.com to explain the advantages of becoming a partner and advertising on their platform.</p>
+                <h2>Cupom.com</h2>
+                <p>Video created for Cupom.com.</p>
               </div>
             </div>
           </li>
-          <li class="pen_card" data-groups='["videos"]'>
-            <div class="pen_card__inner">
-              <div class="pen_overlay">
-                <a target="_blank" href="https://player.vimeo.com/video/83583972">View project</a>
-              </div>
-              <img src="img/work/work-04.jpg">
-            </div>
-            <div class="pen_details">
-              <div class="pen_details__inner">
-                <h2>Cupom Explainer Video</h2>
-                <p>Video created for Cupom.com to explain the advantages of becoming a partner and advertising on their platform.</p>
-              </div>
-            </div>
-          </li>
-          <li class="pen_card" data-groups='["videos"]'>
-            <div class="pen_card__inner">
-              <div class="pen_overlay">
-                <a target="_blank" href="https://player.vimeo.com/video/83583972">View project</a>
-              </div>
-              <img src="img/work/work-04.jpg">
-            </div>
-            <div class="pen_details">
-              <div class="pen_details__inner">
-                <h2>Cupom Explainer Video</h2>
-                <p>Video created for Cupom.com to explain the advantages of becoming a partner and advertising on their platform.</p>
-              </div>
-            </div>
-          </li>
-          <li class="pen_card" data-groups='["initial", coding", "design","marketing"]'>
+          <li class="pen_card bring_in" data-groups='["initial", "coding", "design","marketing"]'>
             <div class="pen_card__inner">
               <div class="pen_overlay">
                 <a target="_blank" href="http://www.freeiphonecases.com">View project</a>
@@ -567,11 +559,11 @@
               <div class="pen_details">
                 <div class="pen_details__inner">
                   <h2>FreeIphoneCases</h2>
-                  <p>Web design, coding and marketing. With our marketing efforts FreeIphoneCases.com now rankings #2 on Google for the keyword "Free iphone cases".</p>
+                  <p>Web design, coding and marketing. <span class="desktop">Thanks to our SEO strategy FreeIphoneCases consistently ranks #1 on Google for the "free iphone cases" keyword.</span></p>
                 </div>
               </div>
            </li>
-              <li class="pen_card" data-groups='["initial", "coding","design","marketing"]'>
+              <li class="pen_card bring_in" data-groups='["initial", "coding","design","marketing"]'>
                 <div class="pen_card__inner">
                   <div class="pen_overlay">
                     <a target="_blank" href="http://hostey.com">View project</a>
@@ -581,27 +573,13 @@
                 <div class="pen_details">
                   <div class="pen_details__inner">
                     <h2>Hostey</h2>
-                    <p>Web hosting company developed from scratch. We help Hostey with design, coding and marketing.</p>
-                  </div>
-                </div>
-              </li>
-              <li class="pen_card" data-groups='["initial", "coding","design","marketing","videos"]'>
-                <div class="pen_card__inner">
-                  <div class="pen_overlay">
-                    <a target="_blank" href="http://hostey.com">View project</a>
-                  </div>
-                  <img src="img/work/work-06.jpg">
-                </div>
-                <div class="pen_details">
-                  <div class="pen_details__inner">
-                    <h2>Hostey</h2>
-                    <p>Web hosting company developed from scratch. We help Hostey with design, coding and marketing.</p>
+                    <p>Web hosting company developed from scratch. <span class="desktop">We help Hostey with design, coding and marketing.</span></p>
                   </div>
                 </div>
               </li>
 
               <!-- sizer -->
-              <li class="pen_card shuffle_sizer"></li>
+              <li id="shuffle_sizer" class="pen_card shuffle_sizer"></li>
           </ul>
       </div>
       </div>
@@ -617,17 +595,14 @@
                   <div class="wrapper">
                     <div class="testimonial">
                       <ul class="testimonial-ul">
-                        <li class="testimonial-slide active">
-                          <p class="slidePara">Excellent and fast.
-                          </p><p><span class="name">Ahmad Ashkar</span> - <a href="http://hultprizesix.com/" target="_blank">Hult Prize</a></p>
+                        <li class="testimonial-slide active js-reset left">
+                          <p><span class="slidePara">Excellent and fast.</span><br><br><span class="name">Ahmad Ashkar</span><br><a href="http://hultprizesix.com/" target="_blank">Hult Prize</a></p>
                         </li>
-                        <li class="testimonial-slide">
-                          <p class="slidePara">I felt very much part of the development of the video and it came out <b>so much better</b> than I expected.
-                          </p><p><span class="name">Samson Kay</span> - <a href="http://onethousanddoors.com/" target="_blank">OneThousandDoors.com</a></p>
+                        <li class="testimonial-slide right">
+                          <p><span class="slidePara">I felt very much part of the development of the video and it came out <b>so much better</b> than I expected.</span><br><br><span class="name">Samson Kay</span><br><a href="http://onethousanddoors.com/" target="_blank">OneThousandDoors.com</a></p>
                         </li> 
                         <li class="testimonial-slide">
-                          <p class="slidePara"><b>Great initiative</b> in problem solving, <b>great marketing</b> skills that complement the development work, <b>great partner</b> to have.
-                          </p><p><span class="name">Branko Kral</span> - <a href="http://bkingdigital.com/" target="_blank">B King Digital</a></p>
+                          <p><span class="slidePara"><b>Great initiative</b> in problem solving, <b>great marketing</b> skills<span class="hidden-xs-down"> that complement the development work</span>, <b>great partner</b> to have.</span><br><br><span class="name">Branko Kral</span><br><a href="http://bkingdigital.com/" target="_blank">B King Digital</a></p>
                         </li>
                       </ul>        
                     </div>
@@ -639,11 +614,11 @@
           </div>
       </section>
     </div>
-    <div id="fourth">
+    <div id="contact">
       <div class="container">
         <div class="row">
           <div class="col-md-6 col-xs-12">
-            <h3><b>Altamind</b> - contact@altamind.com<br> +353 083 473 6975<br></h3>
+            <h3><b>Altamind</b><br>contact@altamind.com<br>+353 083 473 6975<br></h3>
             <p>Altamind is a remotely distributed agency, our team is located in: the USA, Ireland, Brazil, Germany, Bulgaria and others.</p>
             <p>We keep our eyes open for the best and brightest professionals in the world. Contact us for opportunities.</p>
           </div>
@@ -651,8 +626,20 @@
       </div>
     </div>
     </div> <!-- /container -->
+
+    <!-- open/close -->
+    <div class="overlay overlay-hugeinc">
+      <nav class="container">
+        <ul>
+          <li class="menu-no-children"><a href="#about">ABOUT</a></li>
+          <li class="menu-no-children"><a href="#work">WORK</a></li>
+          <li class="menu-no-children"><a href="#contact">CONTACT</a></li>
+        </ul>
+      </nav>
+    </div>
+   <!-- Scripts -->
     <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+    <script src="js/jquery.min.js"></script>
     <script src="js/headroom.js"></script>
     <script src="js/jQuery.headroom.js"></script>
     <script src="js/jquery.shuffle.js"></script>

@@ -1,3 +1,151 @@
+/* Classie */
+
+/*!
+ * classie - class helper functions
+ * from bonzo https://github.com/ded/bonzo
+ * 
+ * classie.has( elem, 'my-class' ) -> true/false
+ * classie.add( elem, 'my-new-class' )
+ * classie.remove( elem, 'my-unwanted-class' )
+ * classie.toggle( elem, 'my-class' )
+ */
+
+/*jshint browser: true, strict: true, undef: true */
+/*global define: false */
+
+( function( window ) {
+
+'use strict';
+
+// class helper functions from bonzo https://github.com/ded/bonzo
+
+function classReg( className ) {
+  return new RegExp("(^|\\s+)" + className + "(\\s+|$)");
+}
+
+// classList support for class management
+// altho to be fair, the api sucks because it won't accept multiple classes at once
+var hasClass, addClass, removeClass;
+
+if ( 'classList' in document.documentElement ) {
+  hasClass = function( elem, c ) {
+    return elem.classList.contains( c );
+  };
+  addClass = function( elem, c ) {
+    elem.classList.add( c );
+  };
+  removeClass = function( elem, c ) {
+    elem.classList.remove( c );
+  };
+}
+else {
+  hasClass = function( elem, c ) {
+    return classReg( c ).test( elem.className );
+  };
+  addClass = function( elem, c ) {
+    if ( !hasClass( elem, c ) ) {
+      elem.className = elem.className + ' ' + c;
+    }
+  };
+  removeClass = function( elem, c ) {
+    elem.className = elem.className.replace( classReg( c ), ' ' );
+  };
+}
+
+function toggleClass( elem, c ) {
+  var fn = hasClass( elem, c ) ? removeClass : addClass;
+  fn( elem, c );
+}
+
+var classie = {
+  // full names
+  hasClass: hasClass,
+  addClass: addClass,
+  removeClass: removeClass,
+  toggleClass: toggleClass,
+  // short names
+  has: hasClass,
+  add: addClass,
+  remove: removeClass,
+  toggle: toggleClass
+};
+
+// transport
+if ( typeof define === 'function' && define.amd ) {
+  // AMD
+  define( classie );
+} else {
+  // browser global
+  window.classie = classie;
+}
+
+})( window );
+
+/* Hamburguer Icon */
+window.hamburguerIcon = function() {
+  "use strict";
+
+  var toggles = document.querySelectorAll(".cmn-toggle-switch");
+
+  for (var i = toggles.length - 1; i >= 0; i--) {
+    var toggle = toggles[i];
+    toggleHandler(toggle);
+  };
+
+  function toggleHandler(toggle) {
+      (toggle.classList.contains("active") === true) ? toggle.classList.remove("active") : toggle.classList.add("active");
+      $('.menu-no-children').css("display", "block");
+          setTimeout(function(){
+                $('.menu-no-children').removeClass("off");
+            }, 10);
+          $('.overlay nav').removeClass("mobile");
+          $('.cmn-toggle-switch__ptm').removeClass("active");
+          $('.sub-menu').removeClass("visible");      
+  }
+
+  var overlay = document.querySelector( 'div.overlay' ),
+    transEndEventNames = {
+      'WebkitTransition': 'webkitTransitionEnd',
+      'MozTransition': 'transitionend',
+      'OTransition': 'oTransitionEnd',
+      'msTransition': 'MSTransitionEnd',
+      'transition': 'transitionend'
+    },
+    transEndEventName = transEndEventNames[ Modernizr.prefixed( 'transition' ) ],
+    support = { transitions : Modernizr.csstransitions };
+
+    if( classie.has( overlay, 'open' ) ) {
+      classie.remove( overlay, 'open' );
+      classie.add( overlay, 'close' );
+      var onEndTransitionFn = function( ev ) {
+        if( support.transitions ) {
+          if( ev.propertyName !== 'visibility' ) return;
+          this.removeEventListener( transEndEventName, onEndTransitionFn );
+        }
+        classie.remove( overlay, 'close' );
+      };
+      if( support.transitions ) {
+        overlay.addEventListener( transEndEventName, onEndTransitionFn );
+      }
+      else {
+        onEndTransitionFn();
+      }
+    }
+    else if( !classie.has( overlay, 'close' ) ) {
+      classie.add( overlay, 'open' );
+    }
+};
+
+
+$('.cmn-toggle-switch').bind("click", function() {
+  window.hamburguerIcon();
+});
+
+$('.overlay ul li a').bind("click", function() {
+  console.log('clickei');
+  window.hamburguerIcon();
+});
+
 // Headroom.js (Hide navbar on scroll)
 $("#header").headroom({
   //"offset": 605,
@@ -68,63 +216,70 @@ $(function() {
 
 
 // First panel rotating text Effect by Rachel Smith: http://codepen.io/rachsmith
-var words = document.getElementsByClassName('word');
-var wordArray = [];
-var currentWord = 0;
+function rotateWords(nameOfClass) {
 
-words[currentWord].style.opacity = 1;
-for (var i = 0; i < words.length; i++) {
-  splitLetters(words[i]);
-}
+  var words = document.getElementsByClassName(nameOfClass);
+  var wordArray = [];
+  var currentWord = 0;
 
-function changeWord() {
-  var cw = wordArray[currentWord];
-  var nw = currentWord == words.length-1 ? wordArray[0] : wordArray[currentWord+1];
-  for (var i = 0; i < cw.length; i++) {
-    animateLetterOut(cw, i);
+  words[currentWord].style.opacity = 1;
+  for (var i = 0; i < words.length; i++) {
+    splitLetters(words[i]);
   }
-  
-  for (var i = 0; i < nw.length; i++) {
-    nw[i].className = 'letter behind';
-    nw[0].parentElement.style.opacity = 1;
-    animateLetterIn(nw, i);
+
+  function changeWord() {
+    var cw = wordArray[currentWord];
+    var nw = currentWord == words.length-1 ? wordArray[0] : wordArray[currentWord+1];
+    for (var i = 0; i < cw.length; i++) {
+      animateLetterOut(cw, i);
+    }
+    
+    for (var i = 0; i < nw.length; i++) {
+      nw[i].className = 'letter behind';
+      nw[0].parentElement.style.opacity = 1;
+      animateLetterIn(nw, i);
+    }
+    
+    currentWord = (currentWord == wordArray.length-1) ? 0 : currentWord+1;
   }
-  
-  currentWord = (currentWord == wordArray.length-1) ? 0 : currentWord+1;
-}
 
-function animateLetterOut(cw, i) {
-  setTimeout(function() {
-		cw[i].className = 'letter out';
-  }, i*80);
-}
-
-function animateLetterIn(nw, i) {
-  setTimeout(function() {
-		nw[i].className = 'letter in';
-  }, 340+(i*80));
-}
-
-function splitLetters(word) {
-  var content = word.innerHTML;
-  word.innerHTML = '';
-  var letters = [];
-  for (var i = 0; i < content.length; i++) {
-    var letter = document.createElement('span');
-    letter.className = 'letter';
-    letter.innerHTML = content.charAt(i);
-    word.appendChild(letter);
-    letters.push(letter);
+  function animateLetterOut(cw, i) {
+    setTimeout(function() {
+  		cw[i].className = 'letter out';
+    }, i*80);
   }
-  
-  wordArray.push(letters);
+
+  function animateLetterIn(nw, i) {
+    setTimeout(function() {
+  		nw[i].className = 'letter in';
+    }, 340+(i*80));
+  }
+
+  function splitLetters(word) {
+    var content = word.innerHTML;
+    word.innerHTML = '';
+    var letters = [];
+    for (var i = 0; i < content.length; i++) {
+      var letter = document.createElement('span');
+      letter.className = 'letter';
+      letter.innerHTML = content.charAt(i);
+      word.appendChild(letter);
+      letters.push(letter);
+    }
+    
+    wordArray.push(letters);
+  }
+
+  changeWord();
+  setInterval(changeWord, 4000);
 }
 
-changeWord();
-setInterval(changeWord, 2000);
+rotateWords('word');
+rotateWords('hero-word');
+
 
 // PORTFOLIO TEXT BY HENDRY SADRAK http://codepen.io/hendrysadrak //
-$('#second .txt').html(function(i, html) {
+$('#work .txt').html(function(i, html) {
   var chars = $.trim(html).split("");
 
   return '<span>' + chars.join('</span><span>') + '</span>';
@@ -137,6 +292,8 @@ $('#second .txt').html(function(i, html) {
 
 	=======================================================================  */
 
+
+
 	function isScrolledIntoView(elem){
 	    var $elem = $(elem);
 	    var $window = $(window);
@@ -146,17 +303,27 @@ $('#second .txt').html(function(i, html) {
 
 	    var elemTop = $elem.offset().top + 400;
 	    var elemBottom = elemTop + $elem.height() - 600;
-	    if((elemBottom <= docViewBottom) && (elemTop >= docViewTop)){
-	    	$elem.addClass('bring_in');
-	    } else {
-	    	$elem.removeClass('bring_in');
-	    }
+      if ( $(window).width() > 768) {
+        $elem.removeClass('bring_in');
+        if((elemBottom <= docViewBottom) && (elemTop >= docViewTop)){
+          $elem.addClass('bring_in');
+        } else {
+          $elem.removeClass('bring_in');
+        }
+      } else {
+        $('.pen_card').addClass('bring_in');
+      }
+	    
 	}
 
 	$(window).scroll(function(){
-		$('.pen_card').each(function(){
-			isScrolledIntoView($(this));
-		})
+    if ( $(window).width() > 768) {
+		  $('.pen_card').each(function(){
+        isScrolledIntoView($(this));
+		  })
+    } else {
+        $('.pen_card').addClass('bring_in');
+    }
 	})
 
 // Shuffle Me
@@ -247,9 +414,11 @@ var shuffleme = (function( $ ) {
 }( jQuery ));
 
 $(document).ready(function()
-{
-  shuffleme.init(); //filter portfolio
+{ 
+    shuffleme.init(); //filter portfolio
+  
 });
+
 
 
 // Testimonials by Jose Flores http://codepen.io/joseflores8082/
